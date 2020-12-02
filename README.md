@@ -9,7 +9,7 @@ loading quicklisp and all the dependencies, with a command like the following,
 takes about 1s.
 
 ```lisp
-$ sbcl --eval '(load "/home/eric/.sbclrc")' \
+$ sbcl --eval "(load \"$HOME/.sbclrc\")" \
 --eval '(ql:quickload (list :alexandria :split-sequence))' \
 --script example.lisp
 ```

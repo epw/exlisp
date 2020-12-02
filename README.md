@@ -10,7 +10,7 @@ takes about 1s.
 
 ```lisp
 $ sbcl --eval '(load "/home/eric/.sbclrc")' \
---eval '(ql:quickload (list :alexandria :split-sequence :eric))' \
+--eval '(ql:quickload (list :alexandria :split-sequence))' \
 --script example.lisp
 ```
 

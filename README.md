@@ -16,3 +16,5 @@ $ sbcl --eval "(load \"$HOME/.sbclrc\")" \
 
 You must have [Quicklisp](https://www.quicklisp.org/) installed to build this.
 Once you do, you can run `make all` and `sudo make install`
+
+This is not an officially supported Google product.

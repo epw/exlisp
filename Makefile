@@ -10,3 +10,6 @@ exlisp: exlisp.lisp
 
 install:
 	cp exlisp $(ROOT)/bin/.
+
+clean:
+	rm -f exlisp *.fasl

@@ -13,6 +13,8 @@
 ;; limitations under the License.
 ;;
 
-(format t "Hello, world. Calculation: ~a~%" (alexandria:factorial 10))
+(format t "Hello, world. Calculation: ~a (also ~a)~%"
+	(alexandria:factorial 10)
+	(eric:2* 19))
 
 (echo #$date$#)

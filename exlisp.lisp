@@ -23,6 +23,7 @@
 (eval-when (:load-toplevel :compile-toplevel :execute)
   (ql:quickload '(:alexandria
 		  ;; ADD MORE LIBRARIES HERE IF YOU WANT
+		  :eric
 		  :shell
 		  :split-sequence)))
 

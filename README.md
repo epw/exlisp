@@ -30,10 +30,15 @@ available for the script.
 
 For convenience, `#$` also terminates if it reaches the end of a
 line, so commands which need to be run with no other interaction can
-be written alone like:
+be written alone between other Lisp, like:
 
 ```lisp
-#$ date
+(format t "Hello, world~%")
+
+ #$ rm /tmp/foo
+
+(if (probe-file "/tmp/foo")
+  (format t "I guess it didn't get deleted.~%"))
 ```
 
 Finally, it defines a few small functions, so far just `(cd)` and

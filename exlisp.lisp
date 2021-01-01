@@ -16,8 +16,10 @@
 ;; Load .sbclrc which is suppressed for --script
 ;; mainly to include Quicklisp
 (eval-when (:load-toplevel :compile-toplevel :execute)
-  (load (merge-pathnames ".sbclrc"
-			 (user-homedir-pathname))))
+  (let ((sbclrc (merge-pathnames ".sbclrc"
+				 (user-homedir-pathname))))
+    (when (probe-file sbclrc)
+      (load sbclrc))))
 
 ;; Load modules that should be available to all scripts
 (eval-when (:load-toplevel :compile-toplevel :execute)

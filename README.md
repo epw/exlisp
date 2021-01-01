@@ -17,6 +17,8 @@ $ sbcl --eval "(load \"$HOME/.sbclrc\")" \
 You must have [Quicklisp](https://www.quicklisp.org/) installed to build this.
 Once you do, you can run `make all` and `sudo make install`
 
+See `example.lisp` for an example using exlisp once it is installed.
+
 ## Convenience Tools
 
 The :shell package makes it easier to execute actual shell commands

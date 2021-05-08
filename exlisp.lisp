@@ -44,7 +44,8 @@
   (append (list (first argv) flag) (rest argv)))
 
 (defun run-script (argv)
-  (let ((sb-ext:*posix-argv* (insert-flag argv "--script")))
+  (let* ((sb-ext:*posix-argv* (insert-flag argv "--script"))
+	 (shell:*script-filename* (third sb-ext:*posix-argv*)))
     (sb-impl::toplevel-init)))
 
 (defun silent-repl-prompt (stream)

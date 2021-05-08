@@ -25,12 +25,15 @@
 
 (defpackage :shell
   (:use :cl :split-sequence)
-  (:export :cd
+  (:export :*script-filename*
+	   :cd
 	   :echo
 	   :sharp-dollar
 	   :shell-line))
 
 (in-package :shell)
+
+(defvar *script-filename* NIL)
 
 (defun shell-line (line)
   (uiop:run-program line

@@ -4,9 +4,16 @@ QUICKLISP = $(HOME)/quicklisp
 
 all: exlisp
 
-exlisp: exlisp.lisp
+shell: shell.lisp shell.asd
 	(cd $(QUICKLISP)/local-projects/; ln -sf $(CURDIR)/shell.asd)
+
+
+exlisp: exlisp.lisp shell
 	./exlisp.lisp
+
+exlisp-cgi: exlisp.lisp shell
+	EXLISP_LIBS=
+
 
 install:
 	cp exlisp $(ROOT)/bin/.

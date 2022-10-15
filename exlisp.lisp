@@ -37,9 +37,12 @@
 	  (first *posix-argv*)))
 
 (defun toplevel-init ()
-  (let ((sb-ext:*posix-argv* (append (list (first sb-ext:*posix-argv*)
+  (let* ((args sb-ext:*posix-argv*))
+    (if (member "--repl" args :test #'string=)
+	(sb-impl::toplevel-init)
+	(let ((sb-ext:*posix-argv* (append (list (first sb-ext:*posix-argv*)
 					   "--script")
 				     (rest sb-ext:*posix-argv*))))
-    (sb-impl::toplevel-init)))
+	  (sb-impl::toplevel-init)))))
 
 (save-lisp-and-die "exlisp" :executable t :toplevel 'toplevel-init)
